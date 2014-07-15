@@ -12,6 +12,9 @@ handlers:
 - url: /images
   static_dir: static/images
 
+- url: /songs
+  static_dir: static/songs
+
 - url: /(.*\.(gif|png|jpg))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
@@ -24,5 +27,33 @@ handlers:
   script: _go_app
   login: admin
 
+- url: /(.*\.html)$
+  static_files: static/\1
+  upload: static/.*\.html$
+
+- url: /contact.html
+  static_files: static/contact.html
+  upload: static/contact.html
+
+- url: /rates.html
+  static_files: static/rates.html
+  upload: static/rates.html
+
+- url: /songs.html
+  static_files: static/songs.html
+  upload: static/songs.html
+
+- url: /index.html
+  static_files: static/index.html
+  upload: static/index.html
+
+- url: /songs/ThenYouCanTellMeGoodbye.mp3
+  static_files: static/songs/ThenYouCanTellMeGoodbye.mp3
+  upload: static/songs/ThenYouCanTellMeGoodbye.mp3
+
+- url: /.*
+  static_files: static/index.html
+  upload: static/index.html
+  
 - url: /.*
   script: _go_app
